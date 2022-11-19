@@ -1,0 +1,12 @@
+{% extends 'myapp/pbase.html' %}
+{% block body_block %}
+    <div class="container">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token%}
+            <div class="container">
+            {{ form.as_p }}
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+{% endblock %}

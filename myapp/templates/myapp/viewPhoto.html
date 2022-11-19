@@ -1,0 +1,17 @@
+{% extends 'myapp/pbase.html' %}
+{% block body_block %}
+    <div class="container">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token%}
+            <div class="container">
+            <div class="card" style="width: 30rem;">
+                <img class="card-img-top" src="{{ photo.image.url }}" alt="Card image cap">
+            </div>
+            <br/>
+            {{ form.as_p }}
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+            <button type="button" class="btn btn-danger" onclick="location.href='{% url "myapp:deletePhoto" photo.id %}'">Delete</button>
+        </form>
+    </div>
+{% endblock %}
