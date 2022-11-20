@@ -17,7 +17,7 @@ class StudentForm(forms.ModelForm):
         model = Student
         fields = ['first_name', 'last_name', 'username',
                   'email', 'password', 'school',
-                  'city', 'interested_in', 'image']
+                  'city', 'image']
         widgets = {
             'first_name': forms.TextInput(attrs={'class': 'form-control'}),
             'last_name': forms.TextInput(attrs={'class': 'form-control'}),
@@ -26,5 +26,4 @@ class StudentForm(forms.ModelForm):
             'password': forms.PasswordInput(attrs={'class': 'form-control'}),
             'school': forms.TextInput(attrs={'class': 'form-control'}),
             'city': forms.Select(attrs={'class': 'form-control'}),
-            'interested_in': forms.CheckboxSelectMultiple,
         }

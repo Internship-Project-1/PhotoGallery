@@ -9,7 +9,6 @@ class Student(User):
     CITY_CHOICES = [('WS', 'Windsor'), ('CG', 'Calgary'), ('MR', 'Montreal'), ('VC', 'Vancouver')]
     school = models.CharField(max_length=50, null=True, blank=True)
     city = models.CharField(max_length=2, choices=CITY_CHOICES, default='WS')
-    interested_in = models.ManyToManyField(Topic)
     image = models.ImageField(null=True, blank=True, upload_to='images/')
 
     def __str__(self):
